@@ -1,19 +1,19 @@
-From dfbe376b8d74cbaf0cc7ccc8400fa03a0b4d9aa5 Mon Sep 17 00:00:00 2001
+From fa36a2c37738d616ad1d1130d220083d58ffd7a2 Mon Sep 17 00:00:00 2001
 From: William Woodall <wjwwood@gmail.com>
-Date: Thu, 31 Jan 2013 23:29:36 -0800
+Date: Thu, 31 Jan 2013 23:46:35 -0800
 Subject: [PATCH] Custom rules file
 
 ---
- debian/rules |   91 +++++++++++++++++++++++++---------------------------------
- 1 file changed, 39 insertions(+), 52 deletions(-)
- rewrite debian/rules (77%)
+ debian/rules |   89 ++++++++++++++++++++++++----------------------------------
+ 1 file changed, 37 insertions(+), 52 deletions(-)
+ rewrite debian/rules (78%)
 
 diff --git a/debian/rules b/debian/rules
-dissimilarity index 77%
-index 9a59446..d482f14 100755
+dissimilarity index 78%
+index 9a59446..7ce32c0 100755
 --- a/debian/rules
 +++ b/debian/rules
-@@ -1,52 +1,39 @@
+@@ -1,52 +1,37 @@
 -#!/usr/bin/make -f
 -# -*- makefile -*-
 -# Sample debian/rules that uses debhelper.
@@ -77,7 +77,7 @@ index 9a59446..d482f14 100755
 +# Uncomment this to turn on verbose mode.
 +export DH_VERBOSE=1
 +export DH_OPTIONS=-v
-+export CMAKE_PREFIX_PATH="/opt/ros/groovy"
++export CMAKE_PREFIX_PATH="/opt/ros/fuerte"
 +CMAKE_FLAGS = \
 +	-DCMAKE_BUILD_TYPE=Release \
 +	-DENABLE_SSE=ON \
@@ -85,10 +85,9 @@ index 9a59446..d482f14 100755
 +	-DENABLE_SSE3=ON \
 +	-DENABLE_SSE42=OFF \
 +	-DENABLE_SSE41=OFF \
-+	-DENABLE_FAST_MATH=OFF \
++	-DUSE_FAST_MATH=OFF \
 +	-DBUILD_EXAMPLES=OFF \
 +	-DBUILD_DOCS=ON \
-+	-DBUILD_PERF_TESTS=OFF \
 +	-DBUILD_TESTS=OFF \
 +	-DBUILD_NEW_PYTHON_SUPPORT=ON \
 +	-DWITH_V4L=ON \
@@ -98,11 +97,10 @@ index 9a59446..d482f14 100755
 +	dh  $@
 +
 +override_dh_auto_configure:
-+	if [ -f "/opt/ros/groovy/setup.sh" ]; then . "/opt/ros/groovy/setup.sh"; fi && \
 +	dh_auto_configure -Scmake -- \
-+		-DCMAKE_INSTALL_PREFIX="/opt/ros/groovy" \
-+		-DCMAKE_PREFIX_PATH="/opt/ros/groovy" \
-+		-DCATKIN_BUILD_BINARY_PACKAGE="1" \
++		-DCMAKE_INSTALL_PREFIX="/opt/ros/fuerte" \
++		-DCMAKE_PREFIX_PATH="/opt/ros/fuerte" \
++		-DCATKIN=YES \
 +		$(CMAKE_FLAGS)
 +
 -- 
