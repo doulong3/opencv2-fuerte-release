@@ -1,0 +1,37 @@
+<stack>
+  <name>opencv2</name>
+  <version>2.4.2</version>
+  <description>OpenCV</description>
+  <author email="vrabaud@willowgarage.com">Vincent Rabaud</author>
+  <maintainer email="vrabaud@willowgarage.com">Vincent Rabaud</maintainer>
+  <license>BSD</license>
+  <copyright>OpenCV</copyright>
+
+  <url>http://opencv.org</url>
+  <build_depends>catkin</build_depends>
+  <build_depends>python-numpy</build_depends>
+  <build_depends>python-support</build_depends>
+  <build_depends>ffmpeg</build_depends>
+  <build_depends>gtk2</build_depends>
+  <build_depends>jasper</build_depends>
+  <build_depends>libjpeg</build_depends>
+  <build_depends>libpng12-dev</build_depends>
+  <build_depends>libtiff4-dev</build_depends>
+  <build_depends>zlib</build_depends>
+  <build_depends>libv4l-dev</build_depends>
+  <build_depends>python</build_depends>
+  <build_depends>texlive-latex-base</build_depends>
+  <depends>python-numpy</depends>
+  <depends>python-support</depends>
+  <depends>ffmpeg</depends>
+  <depends>gtk2</depends>
+  <depends>jasper</depends>
+  <depends>libjpeg</depends>
+  <depends>libpng12-dev</depends>
+  <depends>libtiff4-dev</depends>
+  <depends>zlib</depends>
+  <depends>libv4l-dev</depends>
+  <depends>python</depends>
+
+  <build_type file="bloom/rules.em">custom</build_type>
+</stack>
